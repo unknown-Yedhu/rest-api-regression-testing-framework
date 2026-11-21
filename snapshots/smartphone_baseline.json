@@ -1,0 +1,10 @@
+{
+    "response_body": {
+        "category": "Electronics",
+        "id": 2,
+        "name": "Smartphone",
+        "price": 25000,
+        "stock": 20
+    },
+    "status_code": 200
+}

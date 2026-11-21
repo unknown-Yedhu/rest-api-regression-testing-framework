@@ -1,0 +1,324 @@
+{
+    "report_name": "REST API Regression Testing Report",
+    "generated_at": "2026-11-21T19:39:48.455436",
+    "summary": {
+        "total_tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "success_rate": 100.0,
+        "overall_status": "PASSED"
+    },
+    "performance": {
+        "requests_measured": 6,
+        "average_response_time_ms": 19.81,
+        "fastest_request": {
+            "test_name": "Missing API Endpoint",
+            "endpoint": "/api/does-not-exist",
+            "method": "GET",
+            "response_time_ms": 12.98
+        },
+        "slowest_request": {
+            "test_name": "Get Laptop",
+            "endpoint": "/api/products/1",
+            "method": "GET",
+            "response_time_ms": 26.85
+        },
+        "request_details": [
+            {
+                "test_name": "Health Check",
+                "endpoint": "/api/health",
+                "method": "GET",
+                "response_time_ms": 25.45
+            },
+            {
+                "test_name": "Get All Products",
+                "endpoint": "/api/products",
+                "method": "GET",
+                "response_time_ms": 15.98
+            },
+            {
+                "test_name": "Get Laptop",
+                "endpoint": "/api/products/1",
+                "method": "GET",
+                "response_time_ms": 26.85
+            },
+            {
+                "test_name": "Get Smartphone",
+                "endpoint": "/api/products/2",
+                "method": "GET",
+                "response_time_ms": 23.61
+            },
+            {
+                "test_name": "Get Nonexistent Product",
+                "endpoint": "/api/products/999",
+                "method": "GET",
+                "response_time_ms": 13.97
+            },
+            {
+                "test_name": "Missing API Endpoint",
+                "endpoint": "/api/does-not-exist",
+                "method": "GET",
+                "response_time_ms": 12.98
+            }
+        ]
+    },
+    "test_results": [
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "health_baseline",
+            "endpoint": "/api/health",
+            "method": "GET",
+            "expected": {
+                "response_body": {
+                    "status": "healthy",
+                    "timestamp": 1795268639.565905
+                },
+                "status_code": 200
+            },
+            "actual": {
+                "status_code": 200,
+                "response_body": {
+                    "status": "healthy",
+                    "timestamp": 1795270188.3500898
+                }
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [
+                "root.response_body.timestamp"
+            ],
+            "response_time": 0.025452699992456473,
+            "execution_time": 0.028033599999616854,
+            "timestamp": "2026-11-21T14:09:48.323280+00:00",
+            "test_name": "Health Check"
+        },
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "products_baseline",
+            "endpoint": "/api/products",
+            "method": "GET",
+            "expected": {
+                "response_body": [
+                    {
+                        "category": "Electronics",
+                        "id": 1,
+                        "name": "Laptop",
+                        "price": 75000,
+                        "stock": 10
+                    },
+                    {
+                        "category": "Electronics",
+                        "id": 2,
+                        "name": "Smartphone",
+                        "price": 25000,
+                        "stock": 20
+                    },
+                    {
+                        "category": "Accessories",
+                        "id": 3,
+                        "name": "Headphones",
+                        "price": 3000,
+                        "stock": 15
+                    },
+                    {
+                        "category": "Accessories",
+                        "id": 4,
+                        "name": "Keyboard",
+                        "price": 1500,
+                        "stock": 30
+                    }
+                ],
+                "status_code": 200
+            },
+            "actual": {
+                "status_code": 200,
+                "response_body": [
+                    {
+                        "category": "Electronics",
+                        "id": 1,
+                        "name": "Laptop",
+                        "price": 75000,
+                        "stock": 10
+                    },
+                    {
+                        "category": "Electronics",
+                        "id": 2,
+                        "name": "Smartphone",
+                        "price": 25000,
+                        "stock": 20
+                    },
+                    {
+                        "category": "Accessories",
+                        "id": 3,
+                        "name": "Headphones",
+                        "price": 3000,
+                        "stock": 15
+                    },
+                    {
+                        "category": "Accessories",
+                        "id": 4,
+                        "name": "Keyboard",
+                        "price": 1500,
+                        "stock": 30
+                    }
+                ]
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [],
+            "response_time": 0.01597990001027938,
+            "execution_time": 0.01776139999856241,
+            "timestamp": "2026-11-21T14:09:48.351321+00:00",
+            "test_name": "Get All Products"
+        },
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "laptop_baseline",
+            "endpoint": "/api/products/1",
+            "method": "GET",
+            "expected": {
+                "response_body": {
+                    "category": "Electronics",
+                    "id": 1,
+                    "name": "Laptop",
+                    "price": 75000,
+                    "stock": 10
+                },
+                "status_code": 200
+            },
+            "actual": {
+                "status_code": 200,
+                "response_body": {
+                    "category": "Electronics",
+                    "id": 1,
+                    "name": "Laptop",
+                    "price": 75000,
+                    "stock": 10
+                }
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [],
+            "response_time": 0.026854900002945215,
+            "execution_time": 0.029042399997706525,
+            "timestamp": "2026-11-21T14:09:48.369091+00:00",
+            "test_name": "Get Laptop"
+        },
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "smartphone_baseline",
+            "endpoint": "/api/products/2",
+            "method": "GET",
+            "expected": {
+                "response_body": {
+                    "category": "Electronics",
+                    "id": 2,
+                    "name": "Smartphone",
+                    "price": 25000,
+                    "stock": 20
+                },
+                "status_code": 200
+            },
+            "actual": {
+                "status_code": 200,
+                "response_body": {
+                    "category": "Electronics",
+                    "id": 2,
+                    "name": "Smartphone",
+                    "price": 25000,
+                    "stock": 20
+                }
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [],
+            "response_time": 0.02361139999993611,
+            "execution_time": 0.02604799999971874,
+            "timestamp": "2026-11-21T14:09:48.398141+00:00",
+            "test_name": "Get Smartphone"
+        },
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "not_found_baseline",
+            "endpoint": "/api/products/999",
+            "method": "GET",
+            "expected": {
+                "response_body": {
+                    "error": "Product not found"
+                },
+                "status_code": 404
+            },
+            "actual": {
+                "status_code": 404,
+                "response_body": {
+                    "error": "Product not found"
+                }
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [],
+            "response_time": 0.013972699991427362,
+            "execution_time": 0.01562710000143852,
+            "timestamp": "2026-11-21T14:09:48.424194+00:00",
+            "test_name": "Get Nonexistent Product"
+        },
+        {
+            "success": true,
+            "regression_detected": false,
+            "status": "PASSED",
+            "message": "No regression detected.",
+            "snapshot_name": "missing_endpoint_baseline",
+            "endpoint": "/api/does-not-exist",
+            "method": "GET",
+            "expected": {
+                "response_body": "<!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n",
+                "status_code": 404
+            },
+            "actual": {
+                "status_code": 404,
+                "response_body": "<!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+            },
+            "comparison": {
+                "match": true,
+                "total_differences": 0,
+                "differences": []
+            },
+            "ignored_paths": [],
+            "response_time": 0.012982400003238581,
+            "execution_time": 0.015125099991564639,
+            "timestamp": "2026-11-21T14:09:48.439834+00:00",
+            "test_name": "Missing API Endpoint"
+        }
+    ]
+}

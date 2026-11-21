@@ -1,0 +1,69 @@
+
+{
+    "project": {
+        "name": "REST API Regression Testing Framework",
+        "version": "1.0.0",
+        "description": "Automated REST API regression testing framework with snapshot testing"
+    },
+    "api": {
+        "base_url": "http://127.0.0.1:5000",
+        "timeout": 10
+    },
+    "directories": {
+        "snapshots": "snapshots",
+        "reports": "reports"
+    },
+    "settings": {
+        "save_response_headers": true,
+        "save_response_time": true,
+        "compare_status_codes": true,
+        "compare_response_body": true
+    },
+    "tests": [
+        {
+            "name": "Health Check",
+            "endpoint": "/api/health",
+            "method": "GET",
+            "snapshot": "health_baseline",
+            "enabled": true,
+            "ignore_paths": [
+                "root.response_body.timestamp"
+            ]
+        },
+        {
+            "name": "Get All Products",
+            "endpoint": "/api/products",
+            "method": "GET",
+            "snapshot": "products_baseline",
+            "enabled": true
+        },
+        {
+            "name": "Get Laptop",
+            "endpoint": "/api/products/1",
+            "method": "GET",
+            "snapshot": "laptop_baseline",
+            "enabled": true
+        },
+        {
+            "name": "Get Smartphone",
+            "endpoint": "/api/products/2",
+            "method": "GET",
+            "snapshot": "smartphone_baseline",
+            "enabled": true
+        },
+        {
+            "name": "Get Nonexistent Product",
+            "endpoint": "/api/products/999",
+            "method": "GET",
+            "snapshot": "not_found_baseline",
+            "enabled": true
+        },
+        {
+            "name": "Missing API Endpoint",
+            "endpoint": "/api/does-not-exist",
+            "method": "GET",
+            "snapshot": "missing_endpoint_baseline",
+            "enabled": true
+        }
+    ]
+}

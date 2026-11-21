@@ -1,0 +1,6 @@
+{
+    "response_body": {
+        "error": "Product not found"
+    },
+    "status_code": 404
+}

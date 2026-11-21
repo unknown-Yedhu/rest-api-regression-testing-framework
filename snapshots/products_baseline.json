@@ -1,0 +1,33 @@
+{
+    "response_body": [
+        {
+            "category": "Electronics",
+            "id": 1,
+            "name": "Laptop",
+            "price": 75000,
+            "stock": 10
+        },
+        {
+            "category": "Electronics",
+            "id": 2,
+            "name": "Smartphone",
+            "price": 25000,
+            "stock": 20
+        },
+        {
+            "category": "Accessories",
+            "id": 3,
+            "name": "Headphones",
+            "price": 3000,
+            "stock": 15
+        },
+        {
+            "category": "Accessories",
+            "id": 4,
+            "name": "Keyboard",
+            "price": 1500,
+            "stock": 30
+        }
+    ],
+    "status_code": 200
+}
